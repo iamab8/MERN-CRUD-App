@@ -1,8 +1,17 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Users from "./Users";
+import CreateUser from "./CreateUser";
+import UpdateUser from "./UpdateUser";
 function App() {
   return (
-    <>
-      <h1>This is my first MERN CRUD application</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Users />} />
+        <Route path="/create" element={<CreateUser />} />
+        <Route path="/edit/:id" element={<UpdateUser />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
